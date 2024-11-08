@@ -179,6 +179,7 @@ function ParserImpl:_search(ignore_tail_bytes)
     return false
   end
   -- If there is a matcher matching the line, call its handler.
+  log.debug("Charlie-1: " .. vim.inspect(self.buffer))
   for _, mf in ipairs(self.state) do
     log.debug("Charlie0: " .. vim.inspect(mf))
     local b, e, m1, m2 = self.buffer:find(mf.matcher)
