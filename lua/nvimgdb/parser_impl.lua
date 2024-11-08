@@ -180,6 +180,7 @@ function ParserImpl:_search(ignore_tail_bytes)
   end
   -- If there is a matcher matching the line, call its handler.
   for _, mf in ipairs(self.state) do
+    log.debug("Charlie0: " .. vim.inspect(mf))
     local b, e, m1, m2 = self.buffer:find(mf.matcher)
     if b ~= nil then
       if #self.buffer - e < ignore_tail_bytes then
