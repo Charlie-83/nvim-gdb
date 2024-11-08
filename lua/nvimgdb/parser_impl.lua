@@ -188,12 +188,13 @@ function ParserImpl:_search(ignore_tail_bytes)
       end
       self.buffer = self.buffer:sub(e + 1)
       log.debug("prev state: " .. self:_get_state_name())
-      log.debug("Charlie: " .. b .. e)
+      log.debug("Charlie1: " .. e)
+      log.debug("Charlie2: " .. e)
       if m1 ~= nil then
-        log.debug(tostring(m1))
+        log.debug("Charlie3: " .. tostring(m1))
       end
       if m2 ~= nil then
-        log.debug(tostring(m2))
+        log.debug("Charlie4: " .. tostring(m2))
       end
       self.state = mf.handler(self, m1, m2)
       log.info("new state: " .. self:_get_state_name())
