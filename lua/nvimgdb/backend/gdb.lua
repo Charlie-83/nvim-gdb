@@ -53,7 +53,6 @@ function C.create_parser(actions, proxy)
   local re_prompt = '$'
   self.add_trans(self.paused, '[\r\n]Continuing%.', self._paused_continue)
   self.add_trans(self.paused, '[\r\n]Starting program:', self._paused_continue)
-  self.add_trans(self.paused, re_prompt, self.query_paused)
   self.add_trans(self.running, re_prompt, self.query_paused)
 
   self.state = self.running
