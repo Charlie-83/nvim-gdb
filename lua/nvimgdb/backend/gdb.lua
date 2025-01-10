@@ -57,7 +57,7 @@ function C.create_parser(actions, proxy)
     return self.state
   end
 
-  local re_prompt = '$'
+  local re_prompt = '[\r\n]%(gdb%)[\r ]*$'
   self.add_trans(self.paused, '[\r\n]Continuing%.', self._paused_continue)
   self.add_trans(self.paused, '[\r\n]Starting program:', self._paused_continue)
   self.add_trans(self.paused, re_prompt, self.query_paused)
